@@ -1,0 +1,22 @@
+{
+  "name": "memories-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm install --prefix server && npm install --prefix client && npm run build --prefix client",
+    "start":"npm run start --prefix server"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ayanaw21/chatify-mernStack.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ayanaw21/chatify-mernStack/issues"
+  },
+  "homepage": "https://github.com/ayanaw21/chatify-mernStack#readme"
+}
