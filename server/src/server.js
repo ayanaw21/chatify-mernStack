@@ -5,10 +5,12 @@ dotenv.config();
 
 import authRoutes from "./routes/auth.route.js";
 import messageRoutes from "./routes/message.route.js";
+import { connectDB } from "./lib/db.js";
 
 const app = express();
-const PORT = process.env.PORT || 3000;
 const __dirname = path.resolve();
+
+const PORT = process.env.PORT || 3000;
 
 // Middleware
 app.use(express.json());
@@ -33,4 +35,5 @@ if (process.env.NODE_ENV === "production") {
 
 app.listen(PORT, () => {
 	console.log(`Server is running on port http://localhost:${PORT}`);
+	connectDB();
 });
