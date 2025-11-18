@@ -23,7 +23,7 @@ export const signUp = async (req, res) => {
 		if (user)
 			return res.status(400).json({ message: "email already exists" });
 		const salt = await bcrypt.genSalt(10);
-		const hashedPassword = bcrypt.hash(password, salt);
+		const hashedPassword = await bcrypt.hash(password, salt);
 
 		const newUser = new User({
 			fullName,
@@ -32,9 +32,9 @@ export const signUp = async (req, res) => {
 		});
 		if (newUser) {
 			generateToken(newUser._id, res);
-			await newUser.save();
+			await newUser.save(); 
 
-			res.status(201),
+			res.status(201).
 				json({
 					_id: newUser._id,
 					fullName: newUser.fullName,
