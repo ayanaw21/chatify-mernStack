@@ -1,8 +1,23 @@
-import React from 'react'
+import { useAuthStore } from '../store/useAuthStore'
 
 const ChatPage = () => {
+  const { logout } = useAuthStore()
+  
+  const handleClick = () => {
+    console.log('✅ Button clicked!')
+  }
+  
+  const handleLogout = async () => {
+    await logout()
+  }
+  
   return (
-    <div>ChatPage</div>
+    <div>
+      <p>Chat page</p>
+      {/* Test with simple function first */}
+      <button onClick={handleClick}>Test Click</button>
+      <button onClick={handleLogout}>logout</button>
+    </div>
   )
 }
 
