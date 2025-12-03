@@ -11,7 +11,7 @@ import NoConversationPlaceholder from "../components/NoConversationPlaceholder";
 import { useChatStore } from "../store/useChatStore";
 const ChatPage = () => {
 	const { activeTab, selectedUser } = useChatStore();
-
+  console.log("ChatStore:", useChatStore());
 	return (
 		<div className="relative w-full max-w-6xl h-[800px]">
 			<BorderAnimatedContainer>
