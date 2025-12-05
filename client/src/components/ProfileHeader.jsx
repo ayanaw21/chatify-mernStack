@@ -8,7 +8,6 @@ const mouseClickSound = new Audio("/sounds/mouse-click.mp3");
 function ProfileHeader() {
 	const { logout, authUser, updateProfile } = useAuthStore();
 	const { isSoundEnabled, toggleSound } = useChatStore();
-	console.log("isSoundEnabled", isSoundEnabled);
 	const [selectedImg, setSelectedImg] = useState(null);
 
 	const fileInputRef = useRef(null);
@@ -28,7 +27,6 @@ function ProfileHeader() {
 	};
 
 	const handleSoundToggle = () => {
-		console.log("isSoundEnabled", isSoundEnabled);
 
 		// play click sound before toggling
 		mouseClickSound.currentTime = 0; // reset to start
